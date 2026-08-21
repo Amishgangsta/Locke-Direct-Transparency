@@ -2,10 +2,11 @@
 
 > Public technical reference for Locke Direct. This repository contains documentation, not application source code.
 
-**Operator:** Locke Development
-**Official site:** <https://www.lockedirect.com>
-**Repository type:** Public technical and operational reference
-**Source code:** Not included
+**Operator:** Locke Development LLC  
+**Official site:** <https://www.lockedirect.com>  
+**Support:** support@lockedirect.com  
+**Repository type:** Public technical and operational reference  
+**Source code:** Not included  
 **Last verified:** 2026-08-20
 
 ## What Locke Direct is
@@ -45,6 +46,12 @@ These figures were checked against the private production implementation, curren
 | Production application revision | `e09c077` |
 
 The four price-level counts are 21 products at $5.99, 62 at $29.99, 18 at $49.99, and 16 at $99.99. Product count and document count are different: some products deliver multi-document packages.
+
+## Business identity and contact
+
+Locke Direct is operated by **Locke Development LLC**, a Tennessee limited liability company. The current Locke Direct customer-support mailbox is **support@lockedirect.com**.
+
+The public Terms of Use and other policy pages remain the controlling source for customer-facing legal terms. This repository does not replace those policies.
 
 ## High-level architecture
 
