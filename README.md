@@ -2,11 +2,11 @@
 
 > Public technical reference for Locke Direct. This repository contains documentation, not application source code.
 
-**Operator:** Locke Development
+**Operator:** Locke Development LLC
 **Official site:** <https://www.lockedirect.com>
 **Repository type:** Public technical and operational reference
 **Source code:** Not included
-**Last verified:** 2026-08-20
+**Transparency snapshot refreshed:** 2026-08-26
 
 ## What Locke Direct is
 
@@ -23,28 +23,31 @@ The final document is assembled from maintained document structures, clause cont
 
 ## Current production snapshot
 
-These figures were checked against the private production implementation, current tests, and the production deployment record on 2026-08-20.
+The public documentation was refreshed on 2026-08-26 to reflect the current release line. Automated test figures below are retained as the most recent complete recorded verification run and are dated separately; they should not be read as a fresh test run against the later application revision.
 
-| Item | Verified state |
+| Item | Recorded state |
 |---|---|
-| Curated catalog | 117 products |
-| Production availability | 117 available; 0 remaining in a non-available readiness state |
+| Curated catalog | 118 products |
+| Production availability | 118 released products represented in the public catalog snapshot |
 | Price levels | $5.99, $29.99, $49.99, $99.99 |
-| Application tests | 848/848 passed |
-| Focused security tests | 98/98 passed |
-| Document tests | 376/376 passed |
-| TypeScript typecheck | Passed |
-| Lint | Passed |
-| Launch preflight | Passed |
-| Production build | Passed in the recorded release verification sequence |
+| Revision entitlement | $5.99: 1 included revision; $29.99/$49.99/$99.99: unlimited revisions for 30 days after purchase |
+| Latest complete application test record | 848/848 passed on 2026-08-20 |
+| Latest complete focused security test record | 98/98 passed on 2026-08-20 |
+| Latest complete document test record | 376/376 passed on 2026-08-20 |
+| TypeScript typecheck | Passed in the 2026-08-20 verification record |
+| Lint | Passed in the 2026-08-20 verification record |
+| Launch preflight | Passed in the 2026-08-20 verification record |
+| Production build | Passed in the recorded 2026-08-20 release verification sequence |
 | Dependency audit | `npm audit --omit=dev`: 0; full `npm audit`: 0 on 2026-08-20 |
-| Hosting | Railway, verified from the production deployment record |
-| Payment processor | Stripe, configured in production; no real-money transaction was part of the latest controlled verification sequence |
-| Security headers | HSTS, `X-Content-Type-Options`, frame denial, referrer and permissions policies verified |
+| Hosting | Railway |
+| Payment processor | Stripe |
 | Search indexing | Enabled for the production site |
-| Production application revision | `e09c077` |
+| Current release-line revision | `0d27e70` |
+| Previous fully verified release revision | `e09c077` |
 
-The four price-level counts are 21 products at $5.99, 62 at $29.99, 18 at $49.99, and 16 at $99.99. Product count and document count are different: some products deliver multi-document packages.
+The four price-level counts are 21 products at $5.99, 63 at $29.99, 18 at $49.99, and 16 at $99.99. Product count and document count are different: some products deliver multi-document packages.
+
+The post-August-20 release line added a standalone **Living Will / Health Care Declaration** at the $29.99 level. The release also added pinned official/statutory living-will implementations for Connecticut, Illinois, Arizona, Florida, and California.
 
 ## High-level architecture
 
