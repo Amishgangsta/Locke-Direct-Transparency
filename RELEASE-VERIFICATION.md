@@ -3,17 +3,23 @@
 **Product:** Locke Direct
 **Repository type:** Public technical reference
 **Source code:** Not included
-**Operator:** Locke Development
+**Operator:** Locke Development LLC
 **Official site:** <https://www.lockedirect.com>
-**Last verified:** 2026-08-20
+**Transparency snapshot refreshed:** 2026-08-26
 
-## Current release
+## Current release line
 
-The current public-safe application revision is `e09c077`, which includes the verified mobile Ask Locke behavior after the security release line. The preceding dated project-status record identifies `0960ae6` as the security remediation release; this transparency record uses the later verified revision rather than preserving the stale pointer.
+The currently documented application release-line revision is `0d27e70`. The previous complete recorded verification sequence was performed against `e09c077` on 2026-08-20.
+
+Post-August-20 releases added the current revision-entitlement model, the standalone Living Will / Health Care Declaration, pinned official/statutory living-will implementations for Connecticut, Illinois, Arizona, Florida, and California, and updated Terms/operator/support wording. Later changes through `0d27e70` also include UI-only fixes.
+
+A fresh complete verification run has not been published in this repository for `0d27e70`. Accordingly, the August 20 test figures below are retained as historical release evidence and are not represented as verification of the later release line.
+
+## Previous complete verification record — 2026-08-20
 
 | Check | Result |
 |---|---|
-| Release revision | `e09c077` |
+| Verified release revision | `e09c077` |
 | Production deployment | Railway deployment completed successfully on 2026-08-20 |
 | Migration startup | Passed; migration folder `drizzle` reported `ok` |
 | Production server | Started successfully |
@@ -31,4 +37,4 @@ The current public-safe application revision is `e09c077`, which includes the ve
 
 ## What this does not establish
 
-The deployment and health check establish source/deployment and basic runtime availability, not independent security certification, perfect behavior on every device, a controlled real-money transaction, or legal enforceability of every document. Public release records should be read with [Limitations](LIMITATIONS.md).
+The August 20 deployment and health check establish source/deployment and basic runtime availability for that verified release, not independent security certification, perfect behavior on every device, a controlled real-money transaction, or legal enforceability of every document. They also do not establish that the same test totals apply unchanged to later revisions. Public release records should be read with [Limitations](LIMITATIONS.md).
