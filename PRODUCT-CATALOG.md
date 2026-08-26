@@ -3,9 +3,9 @@
 **Product:** Locke Direct
 **Repository type:** Public technical reference
 **Source code:** Not included
-**Operator:** Locke Development
+**Operator:** Locke Development LLC
 **Official site:** <https://www.lockedirect.com>
-**Last verified:** 2026-08-20
+**Transparency snapshot refreshed:** 2026-08-26
 
 This catalog is generated from the current production-authoritative catalog registry. It publishes customer-facing names, public category, price, and availability only. It does not publish internal identifiers, templates, clause text, or questionnaires.
 
@@ -14,10 +14,10 @@ This catalog is generated from the current production-authoritative catalog regi
 | Public price | Products |
 |---:|---:|
 | $5.99 | 21 self-guided legal forms |
-| $29.99 | 62 customized agreements |
+| $29.99 | 63 customized agreements |
 | $49.99 | 18 advanced legal documents |
 | $99.99 | 16 complete legal packages |
-| **Total** | **117** |
+| **Total** | **118** |
 
 The price levels describe the intended assistance/scope model. They do not measure the legal seriousness of a document. A product's public availability is separately governed by the readiness authority.
 
@@ -108,6 +108,7 @@ The price levels describe the intended assistance/scope model. They do not measu
 | Codicil to Last Will and Testament | Customized Agreements | $29.99 | Available |
 | Child Travel and Medical Authorization Package | Customized Agreements | $29.99 | Available |
 | Temporary Child Care Authorization | Customized Agreements | $29.99 | Available |
+| Living Will / Health Care Declaration | Customized Agreements | $29.99 | Available |
 | Last Will and Testament | Advanced Legal Documents | $49.99 | Available |
 | Durable Financial Power of Attorney | Advanced Legal Documents | $49.99 | Available |
 | Advance Healthcare Directive and Medical Power of Attorney | Advanced Legal Documents | $49.99 | Available |
@@ -142,5 +143,9 @@ The price levels describe the intended assistance/scope model. They do not measu
 | Resolve a Dispute Package | Complete Legal Packages | $99.99 | Available |
 | Hire and Complete the Job Package | Complete Legal Packages | $99.99 | Available |
 | Uncontested Divorce Package | Complete Legal Packages | $99.99 | Available |
+
+### Living-will jurisdiction note
+
+The current release line includes pinned official/statutory living-will implementations for Connecticut, Illinois, Arizona, Florida, and California. The public catalog intentionally does not publish the underlying statutory form bodies or proprietary implementation details.
 
 The official [public catalog](https://www.lockedirect.com/agreements) is the customer-facing source for current presentation and purchase availability. This file is a dated technical snapshot.
