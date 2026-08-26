@@ -3,9 +3,9 @@
 **Product:** Locke Direct
 **Repository type:** Public technical reference
 **Source code:** Not included
-**Operator:** Locke Development
+**Operator:** Locke Development LLC
 **Official site:** <https://www.lockedirect.com>
-**Last verified:** 2026-08-20
+**Transparency snapshot refreshed:** 2026-08-26
 
 ## One-time checkout
 
@@ -21,13 +21,26 @@ The production data model has explicit payment states:
 
 The exact legal transition depends on the incoming event and recorded event time. A later event cannot casually reactivate a terminal revoked or charged-back purchase. A dispute that is resolved in the merchant's favor can restore the paid state under the implemented transition rules.
 
+## Revision entitlement model
+
+Revision access is part of the one-time purchase entitlement and varies by price level:
+
+| Purchase level | Included revision access |
+|---:|---|
+| $5.99 | 1 included revision |
+| $29.99 | Unlimited revisions for 30 days after purchase |
+| $49.99 | Unlimited revisions for 30 days after purchase |
+| $99.99 | Unlimited revisions for 30 days after purchase |
+
+The 30-day period is an entitlement window associated with the original one-time purchase; it is not a recurring subscription. Protected revision operations re-check the purchase and entitlement state before access is granted.
+
 ## Entitlement state
 
-Entitlements separately track `active`, `suspended`, `revoked`, and `expired`. Paid confirmation creates an active entitlement. Refunds and chargebacks disable new downloads and other paid-product operations according to the lifecycle state. Partially refunded purchases suspend access rather than silently continuing as fully active. Every protected operation re-checks current entitlement state, download permission, validity, and product availability.
+Entitlements separately track `active`, `suspended`, `revoked`, and `expired`. Paid confirmation creates an active entitlement. Refunds and chargebacks disable new downloads and other paid-product operations according to the lifecycle state. Partially refunded purchases suspend access rather than silently continuing as fully active. Every protected operation re-checks current entitlement state, download permission, validity, revision eligibility, and product availability.
 
 ## Webhook handling
 
-The webhook path verifies Stripe signatures, suppresses duplicate event IDs, validates checkout session identity/amount/currency/metadata, and records event ordering. It handles checkout completion, refunds, and dispute creation/closure. The latest source and security tests cover duplicate and reordered event behavior; a controlled database-backed and live-money sequence remains an owner operational verification item.
+The webhook path verifies Stripe signatures, suppresses duplicate event IDs, validates checkout session identity/amount/currency/metadata, and records event ordering. It handles checkout completion, refunds, and dispute creation/closure. The latest complete recorded security verification covers duplicate and reordered event behavior; a controlled database-backed and live-money sequence remains an owner operational verification item.
 
 ## Recovery
 
@@ -35,4 +48,4 @@ Recovery is proof of a paid purchase, not a permanent account credential. The re
 
 ## Verification boundary
 
-The latest release verification confirmed configuration and automated lifecycle enforcement. It did not execute a real-money Stripe charge as part of the controlled smoke sequence. That distinction is maintained here deliberately.
+The latest complete recorded release verification was performed on 2026-08-20 against the earlier fully verified release. The later revision-window release is documented here from the maintained implementation and release record, but the August 20 automated-test totals are not presented as a fresh verification run against the later release line. The recorded verification did not execute a real-money Stripe charge as part of its controlled smoke sequence.
