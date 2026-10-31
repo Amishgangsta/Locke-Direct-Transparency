@@ -1,34 +1,34 @@
-# AI Boundaries
+# Ask Locke — guided assistance with constrained AI authority
 
-**Product:** Locke Direct
-**Repository type:** Public technical reference
-**Source code:** Not included
-**Operator:** Locke Development
-**Official site:** <https://www.lockedirect.com>
-**Last verified:** 2026-08-20
+**Public experience observed:** October 31, 2026 · **Implementation boundary:** maintainer/source-reviewed · **Source:** proprietary/private.
 
-## AI-assisted functionality
+## Practical customer value
 
-Ask Locke is an in-application assistance feature. In its document-picker mode it helps a customer describe what they are trying to do and can recommend an available catalog product. In form-fill mode it can explain a current field and suggest values from facts the customer supplies. The application also uses selected state context when it is needed to ground a jurisdiction-related response.
+**Ask Locke helps people start from their real-world task, not a legal document title.** A visitor can describe a transaction and receive a recommendation from the actual available product catalog. After opening a document, optional form assistance can explain specific questions and propose field entries based on details the customer elects to share.
 
-The feature is bounded rather than open-ended: requests have message and content limits, the assistant is rate limited by request source and customer session, and the client receives a controlled unavailable response when the provider is unavailable or the budget is exhausted.
+Guidance deepens through the document workflow, independent of the assistant: the Customized tier asks structured questions and offers clause selections, Advanced explores potential issues and contingencies, and Complete Package coordinates role-specific terms and supporting documents.
 
-## Deterministic functionality
+## Two distinct assistance modes
 
-Final legal-document assembly is separate from Ask Locke. Product definitions, authored questionnaires, maintained content, jurisdiction data, validation, and the assembly process determine the final document. Ask Locke does not select arbitrary legal clauses by returning free-form text that the renderer treats as authoritative document structure.
+| Mode | Purpose | Technical control |
+|---|---|---|
+| Document picker | Suggest an existing product for a described task | Recommendations must match available catalog identifiers |
+| Form help | Explain fields and optionally suggest answers from customer-provided facts | Suggestions must match actual form field IDs and permitted value types/options |
 
-Assistant responses are parsed into a constrained envelope. Recommendations must match an available product slug; fill suggestions must match fields supplied by the selected product; facts are sanitized and limited to an allowlist. Model output that does not satisfy the expected envelope is not treated as an authoritative recommendation or fill instruction.
+The application constrains request size, assistant messaging, budgets and request rates. Unsupported or malformed model output is not admitted as an authoritative recommendation or field update.
 
-## Provider routing and data boundary
+## Deterministic document drafting
 
-When a customer uses Ask Locke, the relevant prompt, message history, and bounded context are sent through OpenRouter to the selected model provider. The current production route requests zero-data-retention provider handling and does not store the conversation on Locke Direct servers. Facts typed directly into the chat are part of the request. Completed questionnaire values are not automatically included in the prompt; selected state can be included when required to use maintained jurisdiction records.
+Ask Locke does **not** generate a free-form executable contract, choose arbitrary legal clauses, or replace jurisdiction and product-readiness checks. Maintained legal-document structures and content, validated customer answers, rule-based conditions, and applicable jurisdiction logic control final document assembly. This separates probabilistic conversational help from the deterministic output path.
 
-This is a processing and transmission statement, not a claim that information never leaves the browser. Customers should read the [Privacy Policy](https://www.lockedirect.com/privacy), which governs consumer-facing data handling.
+## AI privacy boundary
 
-## Failure boundary
+When the feature is invoked, customer-entered messages and bounded context pass through OpenRouter to the selected model provider. The documented production route requests **zero-data-retention provider handling**, and Locke Direct does not store chat transcripts on its servers. Completed questionnaire values are not automatically supplied wholesale; jurisdiction state can be shared when required to answer a supported question. Anything a customer voluntarily types into chat is part of that AI request.
 
-Ask Locke may be unavailable, may misunderstand a request, or may return no usable recommendation. The application treats that as an assistance failure and provides a controlled response. It does not turn an arbitrary model response into a final legal document. The maintained catalog, document structures, validation, and entitlement checks remain the authoritative path for document output.
+**Zero-data-retention routing is a provider handling request, not a promise that messages never leave the device or that provider infrastructure is never involved.** See the [live Privacy Policy](https://www.lockedirect.com/privacy).
 
-## Limits of this description
+## Limits
 
-The repository documents the current verified role of Ask Locke. It does not publish system prompts, provider credentials, proprietary grounding content, private API inventories, or security-test payloads.
+Ask Locke is **document selection and field guidance, not legal advice**. It may return no usable answer, misunderstand a request, or be unavailable. The application retains the deterministic, maintained-document path when assistant help fails.
+
+[Customer workflows](ASK-LOCKE-AND-GUIDED-WORKFLOWS.md) · [Privacy-first controls](PRIVACY-FIRST.md).

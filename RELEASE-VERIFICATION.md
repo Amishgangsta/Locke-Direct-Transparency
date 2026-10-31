@@ -1,4 +1,14 @@
-# Release Verification
+# Release and storefront evidence — keep historical results distinct
+
+## Public storefront snapshot — October 31, 2026
+
+The current live storefront advertises **134 public product listings** and a four-tier pricing ladder: **FREE ($0), $14.99, $24.99, $49.99**. The pricing page also advertises **one included revision** for free self-guided products and **unlimited revisions for 30 days** for paid tiers. The public Privacy Policy describes browser-local drafts, bounded server assembly, purchased-content retention, and consent-gated public-page analytics.
+
+These items were checked against the publicly served [catalog](https://www.lockedirect.com/agreements), [pricing](https://www.lockedirect.com/pricing), and [privacy policy](https://www.lockedirect.com/privacy). Private source review confirmed the canonical price constants and the validated $0 entitlement branch.
+
+**No new full-suite test run, live payment smoke test, independent penetration test, or Railway deployment verification was performed for this documentation update.** The precise currently deployed Git commit and all current live integrations remain unverified here.
+
+## Historical release evidence — August 2026
 
 **Product:** Locke Direct
 **Repository type:** Public technical reference
@@ -7,9 +17,9 @@
 **Official site:** <https://www.lockedirect.com>
 **Transparency snapshot refreshed:** 2026-08-26
 
-## Current release line
+## Previously documented release line (historical)
 
-The currently documented application release-line revision is `0d27e70`. The previous complete recorded verification sequence was performed against `e09c077` on 2026-08-20.
+The application release-line revision documented in August 2026 was `0d27e70`. The previous complete recorded verification sequence was performed against `e09c077` on 2026-08-20.
 
 Post-August-20 releases added the current revision-entitlement model, the standalone Living Will / Health Care Declaration, pinned official/statutory living-will implementations for Connecticut, Illinois, Arizona, Florida, and California, and updated Terms/operator/support wording. Later changes through `0d27e70` also include UI-only fixes.
 

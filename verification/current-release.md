@@ -1,3 +1,5 @@
+> **Historical evidence, not today's current release:** This record documents the August 20, 2026 application revision and its observed runtime. For October 31 public storefront prices, catalog counts and verification limits, consult [Release and storefront evidence](../RELEASE-VERIFICATION.md). No new production-release verification was performed in this documentation refresh.
+
 # Current Locke Direct Production Verification
 
 **Verified:** 2026-08-20

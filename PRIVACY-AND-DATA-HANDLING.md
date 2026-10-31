@@ -1,36 +1,38 @@
-# Privacy and Data Handling
+# Privacy and data handling — accurate retention and transmission boundaries
 
-**Product:** Locke Direct
-**Repository type:** Public technical reference
-**Source code:** Not included
-**Operator:** Locke Development
-**Official site:** <https://www.lockedirect.com>
-**Last verified:** 2026-08-20
+**Reviewed:** October 31, 2026 against the [live Privacy Policy](https://www.lockedirect.com/privacy) and private implementation descriptions. This document summarizes architecture; the posted policy governs.
 
-The live [Privacy Policy](https://www.lockedirect.com/privacy) is the governing consumer-facing policy. This document summarizes implementation-derived data flows and distinguishes processing, transmission, storage, retention, and analytics.
+Locke Direct's privacy-first approach emphasizes **data minimization, purpose separation, explicit analytics consent, guarded access, and bounded retention**. It does not claim that requested server assembly is browser-only, that purchased content immediately disappears, or that external processors are never involved.
 
-| Data category | Purpose | Where handled | Third party | Retention/current boundary |
-|---|---|---|---|---|
-| Browser-local draft answers | Let a customer complete and revise a questionnaire | Customer browser and server assembly request when output is requested | None for browser storage itself | Answers are designed to remain browser-local and are not persisted in draft metadata; server transmission occurs for assembly |
-| Draft metadata | Resume limited workflow state and authorize operations | Locke Direct application/database | Railway operates the service | Non-sensitive progress metadata has a documented expiration window |
-| Generated document text | Deliver a requested preview or final file | Locke Direct application/database/storage | Railway operates the service | Final generated content is temporary and is deleted after the single-use download or scheduled retention window, subject to operational cleanup |
-| Payment information | Complete a purchase | Stripe checkout/payment systems | Stripe | Locke Direct does not store full payment card details; purchase and entitlement records remain for operation and support |
-| Purchase and entitlement records | Prove payment, revisions, download state, and lifecycle | Locke Direct application/database | Railway operates the service; Stripe supplies lifecycle events | Retained according to operational and privacy requirements |
-| Ask Locke messages and bounded context | Provide document selection and form guidance | Browser, Locke Direct route, OpenRouter, selected model provider | OpenRouter and selected provider | Current implementation does not store the conversation on Locke Direct servers; provider routing and retention are governed by configured route controls and the Privacy Policy |
-| Customer session | Bind private capabilities to the browser session | HttpOnly browser cookie and server-side hash | Railway operates the service | Cookie has a finite production lifetime; sensitive rebinding can rotate it |
-| Recovery information | Restore a paid purchase to a browser | Locke Direct application/database | Railway operates the service | Recovery secrets are hashed, expiring, and single-use after redemption |
-| Signing records | Preserve consent, signer metadata, signed text hashes, and final-record integrity | Locke Direct application/database and delivered record | Railway operates the service | Retained as purchase/signing evidence according to operational policy |
-| Operational logs | Diagnose errors and protect service | Locke Direct logging path | Railway operates the service | Safe, redacted records; document content, questionnaire answers, credentials, and database details are excluded |
-| Marketing pageview data | Understand visits to public information and catalog pages | Marketing analytics component and configured analytics service | Isolated self-hosted analytics and, when configured, Google Analytics 4 | Consent-gated where configured; query-free allowlisted paths only |
+| Information | Intended processing and storage boundary |
+|---|---|
+| In-progress questionnaire answers | Browser-local while drafting; transmitted for requested server-side assembly. Sensitive answers are not persisted in ordinary draft metadata. |
+| Draft metadata | Limited progress metadata, with a documented 30-day expiration window. |
+| Completed purchased document and validated purchase answers | Retained to support active purchase access, recovery, revisions and latest deliverables, subject to entitlement/retention lifecycle. |
+| Disposable download copies | Temporary, expiring within 24 hours; links are short-lived and single-use under the posted policy. |
+| Superseded answers/content | Removed after revision rights end under the documented retention lifecycle; latest deliverables and relevant payment/signing integrity records are retained as stated in the posted policy. |
+| Payment credentials | Full card details are processed by Stripe, not stored by Locke Direct. Operational purchase and entitlement data is retained. |
+| Ask Locke messages | Customer-entered messages and bounded context go through OpenRouter to a selected model provider on zero-data-retention-requested routes. Locke Direct does not store its own chat transcript. |
+| Marketing analytics | Explicit opt-in, limited public page titles and query-free path measurements; excluded from forms, completed documents, paid workflows, and Ask Locke messages. |
+| Session and recovery | Scoped secure session handling; hashed, expiring, single-use recovery credentials. |
+| Operational diagnostics | Allowlisted/redacted logs; document text, answers, secrets and payment details are not intended as diagnostic payloads. |
 
-## Analytics boundary
+## Analytics isolation
 
-Analytics is mounted in the marketing shell, not the shared private application root. Pageviews are limited to allowlisted public information/catalog routes. The payload is query-free and does not include questionnaire answers, names, addresses, Ask Locke messages, payment information, or document contents. Google advertising features, Signals, and ad personalization are disabled in the current implementation.
+Public marketing analytics may use a self-hosted provider and configured Google Analytics 4. The recorded source implementation requires affirmative consent, honors **Do Not Track** and **Global Privacy Control**, and fails closed when consent storage is unavailable. It avoids advertising personalization and restricts measurement to allowlisted public pageviews. Analytics services may still receive technical request metadata (for example an IP address and browser details); the product does **not** claim traffic is wholly anonymous to every processor.
 
-## AI transmission boundary
+No questionnaire values, Ask Locke content, names, addresses, card information, or completed document text are part of the intended analytics payload. The sensitive workflow routes are excluded from the public measurement component.
 
-Ask Locke is different from analytics. When a customer invokes it, the message and bounded functional context are sent to OpenRouter and the selected model provider. A customer should not put information into Ask Locke that they do not want processed for that assistance request. See [AI Boundaries](AI-BOUNDARIES.md).
+## AI processing is separate from analytics
 
-## Policy and implementation caveat
+Ask Locke is optional. Its prompt and message context are deliberately narrower than the complete questionnaire and are transmitted to an external provider only when the feature is used. The provider's requested zero-data-retention behavior is distinct from the application's own storage policy.
 
-Implementation-derived statements can change. If the live Privacy Policy and this technical summary diverge, the discrepancy should be reported and the consumer-facing policy should be treated as governing until corrected.
+## Customer documents are not zero-retention
+
+The live policy expressly retains the latest completed purchased content while access is active and stores validated checkout information needed for entitlements and revisions. Older documentation describing all final content as deleted immediately after delivery is **superseded** by this accurate distinction.
+
+## Verification and policy boundaries
+
+These are architecture descriptions compared with accessible private source and the public policy, not a third-party privacy audit. The actual external-service configuration and operations may require additional provider-level verification. For customer rights, deletion requests, and the current contractual policy, see https://www.lockedirect.com/privacy.
+
+[Privacy-first overview](PRIVACY-FIRST.md) · [Security architecture](SECURITY-ARCHITECTURE.md) · [AI boundaries](AI-BOUNDARIES.md).

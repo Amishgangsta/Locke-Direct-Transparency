@@ -5,9 +5,9 @@
 **Source code:** Not included
 **Operator:** Locke Development
 **Official site:** <https://www.lockedirect.com>
-**Last verified:** 2026-08-20
+**Historical full-suite verification:** 2026-08-20; storefront updated 2026-10-31 (not a new test run)
 
-## Current automated results
+## Historical automated results — August 20, 2026
 
 | Suite/check | Result | What it covers at a high level |
 |---|---:|---|
@@ -25,7 +25,7 @@
 
 The automated suites include tests for pricing consistency, product readiness, catalog integrity, questionnaire/placeholder parity, deterministic assembly, multi-document packages, PDF/DOCX behavior, jurisdiction flows, customer authorization, payment transitions, session security, recovery security, signing integrity, entitlement revocation, safe logging, and security headers.
 
-Test counts describe automated verification coverage. They should not be interpreted as proof that the software is defect-free, that every jurisdictional outcome is correct, or that a live payment provider sequence has been executed.
+The test counts below describe the earlier fully verified application revision, not the production state as of October 31, 2026. Test counts describe automated verification coverage. They should not be interpreted as proof that the software is defect-free, that every jurisdictional outcome is correct, or that a live payment provider sequence has been executed.
 
 ## Privacy of the test record
 

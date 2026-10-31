@@ -1,4 +1,20 @@
-# Transparency Repository Changelog
+# Transparency repository changelog
+
+This records dated changes to **public documentation**, not claims that a new application deployment or full test run occurred.
+
+## 2026-10-31 — Privacy-first, guided-workflow and live-catalog refresh
+
+- Replaced the old $5.99/$29.99/$49.99/$99.99 pricing claims with the publicly advertised **FREE/$14.99/$24.99/$49.99** tiers.
+- Updated the live public catalog snapshot from **118 to 134** listed products: **24 free / 76 customized / 18 advanced / 16 complete packages**; included all 16 additional product names.
+- Added conspicuous coverage of **Ask Locke document discovery and form help**, the guided assistance ladder, and deterministic document assembly.
+- Added dedicated **privacy-first** and **guided-workflow/AI** explainers, distinguishing app storage from external AI processing and marketing analytics.
+- Documented the source-reviewed **free $0 entitlement checkout** path separate from Stripe paid checkout.
+- Corrected the old privacy-document statement implying completed content is automatically deleted after delivery: the live policy provides for retention of purchased final content during active access and bounded cleanup of superseded artifacts.
+- Preserved August 20 automated-test records as **historical** rather than claiming a new test run. No application code or deployment was modified.
+
+**Evidence:** public website pages inspected October 31, 2026; private application source inspected for implementation boundaries. No independent audit, production transaction, or current full test run was performed.
+
+---
 
 This changelog records factual and documentation changes in the public transparency repository. It is not a marketing announcement feed.
 

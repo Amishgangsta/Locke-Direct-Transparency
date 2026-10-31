@@ -1,51 +1,30 @@
-# Payments and Entitlements
+# Payments, free access, and revision entitlements
 
-**Product:** Locke Direct
-**Repository type:** Public technical reference
-**Source code:** Not included
-**Operator:** Locke Development LLC
-**Official site:** <https://www.lockedirect.com>
-**Transparency snapshot refreshed:** 2026-08-26
+**Updated for public pricing:** 2026-10-31 · **Operator:** Locke Development LLC · [Live pricing](https://www.lockedirect.com/pricing)
 
-## One-time checkout
+## Four-tier entitlement model
 
-Locke Direct lists one-time document and package prices. A checkout attempt is bound to the customer browser session and the selected product. The checkout route validates product readiness, price/currency, disclaimer acknowledgment, same-origin conditions, and the configured canonical application URL before creating a Stripe payment session.
+| Product tier | One-time price | Included revision terms | Checkout |
+|---|---:|---|---|
+| Self-Guided | **FREE ($0)** | **1 revision** | Validated no-charge entitlement; no Stripe charge |
+| Customized | **$14.99** | Unlimited revisions for **30 days after purchase** | Stripe |
+| Advanced | **$24.99** | Unlimited revisions for **30 days after purchase** | Stripe |
+| Complete Package | **$49.99** | Unlimited revisions for **30 days after purchase** | Stripe |
 
-Stripe processes payment information. Locke Direct does not store full payment card details. Stripe returns signed lifecycle events to the webhook route.
+The paid 30-day period is a revision window, **not a subscription**. A completed paid purchase retains the revision terms applicable to that purchase, even if later catalog pricing changes. Existing historical purchases may carry original price/entitlement rules.
 
-## Purchase state
+## Free-document path — source-reviewed
 
-The production data model has explicit payment states:
+For a $0 catalog product, the same customer-session, document validation, disclaimer-acceptance, purchase and entitlement checks precede the no-charge completion. The checkout route explicitly detects a zero-cent purchase and completes it through the internal purchase-entitlement transition, returning `mode: "free"`. **There is no Stripe payment session or card charge for that free branch.** Product readiness and entitlement rules still apply. A free product is not an unrestricted bypass of application controls.
 
-`pending` → `paid` → `refunded` / `partially_refunded` / `disputed` / `chargeback` / `revoked`
+## Paid checkout — source-reviewed
 
-The exact legal transition depends on the incoming event and recorded event time. A later event cannot casually reactivate a terminal revoked or charged-back purchase. A dispute that is resolved in the merchant's favor can restore the paid state under the implemented transition rules.
+For paid products, the server checks the selected product, validated questionnaire answers, current readiness, applicable price, browser-scoped purchase identity, and explicit disclaimer acceptance before initiating a Stripe payment session. Signed Stripe webhooks and idempotent lifecycle processing update purchase and entitlement state. Entitlements govern generation, revision, signing and download. Refund, dispute and chargeback handling can restrict access.
 
-## Revision entitlement model
+## Recovery and customer control
 
-Revision access is part of the one-time purchase entitlement and varies by price level:
+Recovery secrets are hashed, time-limited and single-use for browser rebinding. The product offers PDF and DOCX downloads and limited first-party e-signing; signing is not represented as independent multi-party identity authentication.
 
-| Purchase level | Included revision access |
-|---:|---|
-| $5.99 | 1 included revision |
-| $29.99 | Unlimited revisions for 30 days after purchase |
-| $49.99 | Unlimited revisions for 30 days after purchase |
-| $99.99 | Unlimited revisions for 30 days after purchase |
+## Evidence boundary
 
-The 30-day period is an entitlement window associated with the original one-time purchase; it is not a recurring subscription. Protected revision operations re-check the purchase and entitlement state before access is granted.
-
-## Entitlement state
-
-Entitlements separately track `active`, `suspended`, `revoked`, and `expired`. Paid confirmation creates an active entitlement. Refunds and chargebacks disable new downloads and other paid-product operations according to the lifecycle state. Partially refunded purchases suspend access rather than silently continuing as fully active. Every protected operation re-checks current entitlement state, download permission, validity, revision eligibility, and product availability.
-
-## Webhook handling
-
-The webhook path verifies Stripe signatures, suppresses duplicate event IDs, validates checkout session identity/amount/currency/metadata, and records event ordering. It handles checkout completion, refunds, and dispute creation/closure. The latest complete recorded security verification covers duplicate and reordered event behavior; a controlled database-backed and live-money sequence remains an owner operational verification item.
-
-## Recovery
-
-Recovery is proof of a paid purchase, not a permanent account credential. The recovery secret is stored only as a hash, expires, and can be redeemed once through an atomic update. Successful redemption binds the purchase to the current browser session. A stale, expired, or concurrently redeemed recovery secret is rejected.
-
-## Verification boundary
-
-The latest complete recorded release verification was performed on 2026-08-20 against the earlier fully verified release. The later revision-window release is documented here from the maintained implementation and release record, but the August 20 automated-test totals are not presented as a fresh verification run against the later release line. The recorded verification did not execute a real-money Stripe charge as part of its controlled smoke sequence.
+Prices and revision terms were observed on the live site October 31, 2026; the $0 branch was reviewed in the private application's checkout source. No live real-money charge, refund, chargeback or complete production end-to-end sequence was executed for this documentation change. See [Security architecture](SECURITY-ARCHITECTURE.md), [Privacy-first boundaries](PRIVACY-FIRST.md), and [Historical release verification](RELEASE-VERIFICATION.md).
