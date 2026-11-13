@@ -59,7 +59,7 @@ The strongest distinction is the **combination** of transparent one-time pricing
 
 Competing services can also offer one-time documents, state-specific templates, and Word/PDF exports; those capabilities alone are not unique. The practical decision is how much help you need understanding the terms, how the final document is assembled, and whether you want a recurring plan.
 
-See **[How Locke Direct compares with other legal-document services](COMPARISON.md)** for a source-linked comparison of published offerings from LawDepot, Legal Templates, and eForms.
+See **[Why Choose Locke Direct? — Five-competitor side-by-side comparison](COMPARISON.md)** for a source-linked, customer-ordered review of **Ask Locke document recommendations and form help**, customizable drafting, revision terms, pricing, and delivery against **LawDepot, eForms, LegalTemplates, US Legal Forms, and LawDistrict**.
 
 ## How it works
 
