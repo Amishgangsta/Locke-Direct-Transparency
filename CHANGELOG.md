@@ -2,6 +2,16 @@
 
 This records dated changes to **public documentation**, not claims that a new application deployment or full test run occurred.
 
+## 2026-11-13 — Expanded five-competitor comparison
+
+- Updated [COMPARISON.md](COMPARISON.md) from three vendors to **LawDepot, eForms, LegalTemplates, US Legal Forms, and LawDistrict**, with pricing and capabilities referenced to provider-owned pages reviewed November 13.
+- Added detailed **Ask Locke** coverage for conversational document discovery, in-form field explanations, validated suggested field values, and user-approved application of form inputs.
+- Reordered comparison by customer priority and distinguished verified Locke implementation, market ties, limited relative advantages, and features not independently verified.
+- Explicitly excluded unsupported claims of market-leading legal freshness, accuracy, security, or AI superiority.
+- Updated the README entry pointing to this comparison. This is a **documentation-only change**, not a production deployment or independent live feature benchmark.
+
+---
+
 ## 2026-10-31 — Privacy-first, guided-workflow and live-catalog refresh
 
 - Replaced the old $5.99/$29.99/$49.99/$99.99 pricing claims with the publicly advertised **FREE/$14.99/$24.99/$49.99** tiers.
