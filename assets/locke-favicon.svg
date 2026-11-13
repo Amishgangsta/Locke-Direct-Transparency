@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Locke Direct">
+  <!--
+    The browser-tab mark. Deliberately the same seal as the site header
+    (.lp-seal in app/globals.css): ink field, brass rule, cream serif "L".
+    The fills below are the literal values of the ink and brass custom
+    properties; an SVG served from /public cannot read CSS variables, so if
+    those design tokens change this file has to change with them.
+
+    The "L" is a path rather than a text element so it renders identically
+    wherever a favicon is drawn. Tab strips, bookmark bars, and history entries
+    do not reliably have the site's serif font available.
+
+    Note for editors: this is parsed as XML, so a comment here may not contain
+    a doubled hyphen. Write CSS token names without their leading dashes.
+  -->
+  <rect x="0.9" y="0.9" width="30.2" height="30.2" rx="5.6"
+        fill="#102735" stroke="#a97635" stroke-width="1.8" />
+  <path d="M10 8.5 h8.5 v2.6 h-3.1 v10.3 h6.6 v2.6 H10 v-2.6 h2.4 V11.1 H10 Z"
+        fill="#f7efe1" />
+</svg>

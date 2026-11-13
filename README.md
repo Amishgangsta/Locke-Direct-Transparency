@@ -1,85 +1,81 @@
-# Locke Direct — Privacy-first, guided legal-document preparation
+<p align="center"><img src="assets/locke-favicon.svg" width="72" alt="Locke Direct emblem"></p>
 
-**Professional legal documents, plain-English guidance, and thoughtful data boundaries — without a subscription.**
+# Locke Direct
+### Legal paperwork in plain English. Professional documents. One-time prices.
 
-[**Explore Locke Direct**](https://www.lockedirect.com) · [**Browse 134 documents**](https://www.lockedirect.com/agreements) · [**Compare pricing and guidance**](https://www.lockedirect.com/pricing) · [**Read the privacy policy**](https://www.lockedirect.com/privacy)
+**Understand what you are signing—not just where to sign.**
 
-**Built and operated by Locke Development LLC.** This is a **public technical and product reference**, not an open-source copy of the proprietary application. The live site and catalog were inspected **October 31, 2026**; implementation descriptions are maintainer/source-reviewed and are not an independent security certification.
+Locke Direct is a privacy-conscious legal-document preparation platform for individuals, families, landlords, contractors, freelancers, and small businesses. Choose the document that fits your situation, answer guided questions in everyday language, preview the result, and receive a PDF and editable Word file. No subscription and no trial that automatically converts into recurring billing.
 
-## Why Locke Direct stands out
+**[Visit Locke Direct](https://www.lockedirect.com/)** · **[Explore documents](https://www.lockedirect.com/agreements)** · **[Pricing](https://www.lockedirect.com/pricing)** · **[Interactive guided tour](https://www.lockedirect.com/demo)**
 
-Locke Direct combines practical legal-document preparation with graduated, plain-English assistance. Customers can complete straightforward forms for **$0**, use more detailed guided interviews when terms require attention, or create coordinated document packages for involved transactions. All four tiers include the applicable document workflow, preview, PDF and editable DOCX deliverables, first-party e-sign capability within product scope, and defined revision access. **No subscription is required.**
+---
 
-The architecture deliberately separates **AI-assisted navigation** from **authoritative legal-document assembly**. Ask Locke helps customers find the right document and understand form fields; validated questionnaires, maintained content, jurisdiction rules, and deterministic assembly control the final output. AI responses are constrained and cannot freely inject operative clauses into signed documents.
+## See Locke Direct in action
 
-## Privacy is an architectural boundary, not an afterthought
+**Watch the narrated 1-minute-43-second product demonstration:** from choosing a document and getting help from Ask Locke through a guided interview, preview, checkout, and final downloads.
 
-- **Browser-local drafts:** questionnaire answers are kept in the browser during draft work; server processing occurs when assembly is requested. Completed paid document content and validated checkout answers are retained where necessary for active access, recovery, and revisions.
-- **Marketing analytics separated from private workflows:** only allowlisted public-page measurements are eligible. Questionnaire answers, names, addresses, Ask Locke messages, payments, and document contents are excluded from analytics payloads.
-- **Consent-first measurement:** optional marketing analytics requires affirmative consent. Rejection, Do Not Track, Global Privacy Control, or unavailable consent storage block tracking under the documented implementation.
-- **Bounded AI requests:** Ask Locke sends voluntarily supplied messages and limited task context through OpenRouter to a selected model provider on zero-data-retention-requested routes; the application does not store Ask Locke chat transcripts on its own servers.
-- **Security-focused access controls:** scoped customer sessions, entitlement checks, hashed single-use recovery secrets, signed payment webhooks, safe logging, and defined retention boundaries are documented.
-- **Owned outputs:** PDF/DOCX files can be retained and edited by customers; no membership vault is required.
+[![Watch the Locke Direct video demonstration](assets/locke-direct-demo-poster.jpg)](https://www.lockedirect.com/media/locke-direct-demo.mp4)
 
-See [Privacy-first architecture](PRIVACY-FIRST.md), [Security architecture](SECURITY-ARCHITECTURE.md), and the governing [live Privacy Policy](https://www.lockedirect.com/privacy). Privacy-first **does not mean zero server processing or zero document retention**; the linked policy specifies what is transmitted and retained.
+**[Play the demonstration video](https://www.lockedirect.com/media/locke-direct-demo.mp4)** · **[Explore the step-by-step interactive tour](https://www.lockedirect.com/demo)**
 
-## Ask Locke — help choosing and completing a document
+The video is served from the official Locke Direct website; the preview image is included in this public repository. See [DEMO.md](DEMO.md).
 
-Ask Locke is a bounded assistance layer with two functions:
+## Why people choose Locke Direct
 
-1. **Document picker:** a customer describes the intended transaction, and Ask Locke recommends a document that actually exists in the available catalog.
-2. **Form guidance:** once a document is opened, Ask Locke can explain field meaning and propose entries from facts the customer explicitly supplies, using only real field identifiers and permitted values.
+| What matters | The Locke Direct approach |
+| --- | --- |
+| **Know the cost upfront** | Four published price points: **free, $14.99, $24.99, and $49.99**. Each is a one-time purchase, with no subscription required. |
+| **Know what a clause actually does** | Plain-English explanations describe why a question matters, what a term changes, and whose interests it affects. |
+| **Get guidance at the right depth** | Start with a self-guided form, progress to customized or advanced interviews, or coordinate related documents in a complete package. |
+| **Use AI for assistance, not unchecked legal text** | Ask Locke helps select documents and explains fields; validated inputs and maintained clause content govern final assembly rather than free-form AI drafting. |
+| **Keep private work out of marketing analytics** | Marketing measurement is consent-based and restricted to public pages; questionnaire answers and document contents are excluded from analytics payloads. |
+| **Leave with files you control** | PDF and editable DOCX outputs; supported electronic-signature workflows and defined revision access. |
 
-Recommendations are checked against available catalog slugs; proposed field values are constrained to that document's schema. The assistant can fail safely or return no recommendation rather than inventing a product or legal provision. **Ask Locke is not a law firm, legal advice, or the generator of operative document clauses.**
+### Four levels of help, with straightforward pricing
 
-[Explore guided workflows and Ask Locke](ASK-LOCKE-AND-GUIDED-WORKFLOWS.md) · [Technical AI boundaries](AI-BOUNDARIES.md)
+| Level | One-time price | Designed for |
+| --- | ---: | --- |
+| **Self-Guided** | **$0** | Straightforward forms when you know the essential details; includes one revision. |
+| **Customized** | **$14.99** | Agreements that need structured questions, selected terms, and consistency checks. |
+| **Advanced** | **$24.99** | More involved decisions, alternatives, contingencies, and issue-identifying interviews. |
+| **Complete Package** | **$49.99** | Related documents coordinated through role-aware questions and shared facts. |
 
-## Four levels of help, transparent one-time pricing
+**Paid products include unlimited revisions for 30 days after purchase.** Final deliverables and electronic-signature capability depend on each product's published scope.
 
-| Level | Live catalog | One-time price | How the workflow helps |
-|---|---:|---:|---|
-| **Self-Guided** | **24 forms** | **FREE ($0)** | Focused entry of known facts, completeness/consistency checks, one included revision |
-| **Customized** | **76 agreements** | **$14.99** | Structured guided questions, selected clauses, detailed terms, consistency checks |
-| **Advanced** | **18 documents** | **$24.99** | Issue identification, contingencies, scenarios, cross-clause consistency |
-| **Complete Package** | **16 packages** | **$49.99** | Role-aware interviews, coordinated companion documents, cross-document checks |
-| **Total** | **134 products** | | |
+## What can you prepare?
 
-Each paid tier includes **unlimited revisions for 30 days after purchase**; the free tier includes **one revision**. PDF and DOCX are listed across all tiers, with electronic-signing features subject to their documented scope. A free product is unlocked through the validated $0 entitlement flow rather than a Stripe charge; paid checkout uses Stripe.
+- **Property and renting:** residential leases, notices, renewals, and property-related agreements.
+- **Sales and transfers:** vehicle bills of sale, private-sale documents, and transaction records.
+- **Family and estate planning:** wills, powers of attorney, healthcare authorizations, and coordinated packages.
+- **Independent work and business:** contractor agreements, service contracts, nondisclosure agreements, and related documents.
+- **Loans and disputes:** promissory notes, demand documents, and settlement-related paperwork.
 
-Examples include a **free Motor Vehicle Bill of Sale**, a **$14.99 Customized Residential Lease**, a **$24.99 Last Will and Testament**, and a **$49.99 Estate Planning Package**. Product count is not identical to document-file count: packages can contain multiple deliverables.
+**[Browse the current catalog](https://www.lockedirect.com/agreements)** — the live site is authoritative for product availability.
 
-## What the engineering demonstrates
+## What makes Locke Direct different from other document services?
 
-```mermaid
-flowchart LR
-  C[Customer] --> P[Catalog and product readiness]
-  P --> Q[Plain-English, jurisdiction-aware questionnaire]
-  Q --> V[Validation and consistency rules]
-  V --> A[Deterministic assembly from maintained content]
-  A --> E[PDF / DOCX / scoped e-sign]
-  P -. document selection .-> L[Ask Locke]
-  Q -. optional field help .-> L
-  L -. schema-validated suggestions .-> Q
-  V --> F{Price}
-  F -->|$0| Z[Validated free entitlement]
-  F -->|Paid| S[Stripe checkout and verified entitlement]
-  Z --> E
-  S --> E
-```
+The strongest distinction is the **combination** of transparent one-time pricing, graduated guidance, an AI assistant limited to navigation and form help, deterministic document assembly, and consent-first marketing analytics.
 
-Design themes: separated pricing/readiness authorities, rule-driven assembly, hierarchical jurisdiction handling, explicit session and payment trust boundaries, synchronized PDF/DOCX rendering, document-package generation, security regression coverage, and deliberately limited AI influence.
+Competing services can also offer one-time documents, state-specific templates, and Word/PDF exports; those capabilities alone are not unique. The practical decision is how much help you need understanding the terms, how the final document is assembled, and whether you want a recurring plan.
 
-## Evidence and documentation
+See **[How Locke Direct compares with other legal-document services](COMPARISON.md)** for a source-linked comparison of published offerings from LawDepot, Legal Templates, and eForms.
 
-- [System overview](SYSTEM-OVERVIEW.md) · [Document assembly](DOCUMENT-ASSEMBLY.md) · [Jurisdiction model](JURISDICTION-MODEL.md)
-- [Privacy-first architecture](PRIVACY-FIRST.md) · [Privacy and data handling](PRIVACY-AND-DATA-HANDLING.md) · [Security architecture](SECURITY-ARCHITECTURE.md)
-- [Ask Locke and guided workflows](ASK-LOCKE-AND-GUIDED-WORKFLOWS.md) · [AI boundaries](AI-BOUNDARIES.md)
-- [Payments and entitlements](PAYMENTS-AND-ENTITLEMENTS.md) · [Product catalog](PRODUCT-CATALOG.md)
-- [Testing and quality](TESTING-AND-QUALITY.md) · [Release verification](RELEASE-VERIFICATION.md) · [Verification records](verification/README.md)
-- [Limitations](LIMITATIONS.md) · [Responsible disclosure](RESPONSIBLE-DISCLOSURE.md) · [Changelog](CHANGELOG.md)
+## How it works
 
-**Evidence distinction:** The **134 products and listed prices** are a dated observation of the public catalog on October 31, 2026; the earlier **848 application / 98 security / 376 document passing tests** are dated **August 20, 2026**, for a separate application revision. They are historical evidence, **not a fresh test run or independent audit of today's deployment**. Product availability can change; live catalog pages are authoritative for current offers.
+1. **Choose:** Start with your situation or ask Locke to help identify a suitable document.
+2. **Answer:** Work through the document's plain-language questions and relevant jurisdiction choices.
+3. **Review:** See the proposed terms and preview the document before completing a purchase.
+4. **Finish:** Complete the free entitlement or one-time checkout, then download your documents.
 
-**Proprietary boundaries:** Source code, clause libraries, model prompts, customer records, provider credentials, and exploitable security details are intentionally absent. Technical implementation claims are based on maintainer access to private source and public evidence, not independently reproducible tests from this documentation repository.
+## Built with privacy and control in mind
 
-**Legal boundary:** Locke Direct provides document-preparation assistance, **not legal advice or legal representation**. Customers must review documents and obtain qualified legal advice for their circumstances.
+Locke Direct separates optional public-page analytics from document-preparation workflows. AI-assisted navigation is distinct from the controlled clause-assembly process. Purchases and downloads use server-side entitlement and access checks. The [Privacy Policy](https://www.lockedirect.com/privacy) governs actual processing, retention, and deletion.
+
+**Want to see how the product is engineered?** The [technical reference](TECHNICAL-REFERENCE.md) and documentation in this repository describe system architecture, data handling, verification practices, and limitations without publishing proprietary application code.
+
+---
+
+**[Open Locke Direct](https://www.lockedirect.com/)** · **[Watch the demo](https://www.lockedirect.com/media/locke-direct-demo.mp4)** · **[View pricing](https://www.lockedirect.com/pricing)** · **[Read the privacy policy](https://www.lockedirect.com/privacy)**
+
+<sub>Locke Direct is operated by Locke Development LLC. It provides legal-document preparation assistance, not legal advice or representation. Product suitability and legal requirements depend on the facts and jurisdiction; obtain qualified legal advice when needed. This is a product showcase and public reference, not the application's source repository.</sub>
